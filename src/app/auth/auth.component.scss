@@ -1,0 +1,63 @@
+[data-component='auth'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .logo {
+    margin: 0 0 30px;
+  }
+
+  .mat-card {
+    width: 400px;
+    height: auto;
+  }
+
+  .mat-form-field {
+    width: 100%;
+
+  }
+
+  .mat-form-field-appearance-outline {
+    .mat-form-field-outline {
+      background-color: white;
+    }
+  }
+
+  .mat-card-content {
+    text-align: center;
+  }
+
+  .mat-raised-button {
+    position: relative;
+    min-height: 40px;
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate( -50%, -50% );
+      font-size: 25px;
+    }
+
+    .fa-door-closed {
+      opacity: 0;
+    }
+
+    &:disabled {
+      background-color: #422123;
+      color: white;
+      cursor: not-allowed;
+
+      .fa-door-closed {
+        opacity: 1;
+      }
+
+      .fa-door-open {
+        opacity: 0;
+      }
+    }
+
+  }
+}
+

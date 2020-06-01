@@ -1,0 +1,113 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+/* For use in src/lib/core/theming/_palette.scss */
+$accent: (
+    50 : #fef3e3,
+    100 : #fde0b9,
+    200 : #fbcc8a,
+    300 : #f9b75b,
+    400 : #f8a737,
+    500 : #f79814,
+    600 : #f69012,
+    700 : #f5850e,
+    800 : #f37b0b,
+    900 : #f16a06,
+    A100 : #ffffff,
+    A200 : #ffefe6,
+    A400 : #ffcfb3,
+    A700 : #ffbf99,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$primary: (
+    50 : #e8e4e5,
+    100 : #c6bcbd,
+    200 : #a19091,
+    300 : #7b6465,
+    400 : #5e4244,
+    500 : #422123,
+    600 : #3c1d1f,
+    700 : #33181a,
+    800 : #2b1415,
+    900 : #1d0b0c,
+    A100 : #ff5e5e,
+    A200 : #ff2b2b,
+    A400 : #f70000,
+    A700 : #de0000,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$ngx-honey-primary: mat-palette($primary);
+$ngx-honey-accent: mat-palette($accent);
+
+// The warn palette is optional (defaults to red).
+$ngx-honey-warn: mat-palette($mat-red);
+
+// Change card color
+$mat-light-theme-background: map_merge($mat-light-theme-background, (card: #f9f9f9));
+// Create the theme object (a Sass map containing all of the palettes).
+$ngx-honey-theme: mat-light-theme($ngx-honey-primary, $ngx-honey-accent, $ngx-honey-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($ngx-honey-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+   height: 100%;
+}
+body {
+  display: flex;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+app-root {
+  width: 100%;
+}

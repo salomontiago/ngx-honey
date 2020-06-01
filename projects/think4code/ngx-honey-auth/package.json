@@ -1,0 +1,28 @@
+{
+  "name": "@think4code/ngx-honey-auth",
+  "version": "1.0.0",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/salomontiago/ngx-honey/tree/master/projects/think4code/ngx-honey-auth"
+  },
+  "keywords": [
+    "angular",
+    "auth",
+    "authentication",
+    "login",
+    "logout",
+    "guard",
+    "auth module",
+    "login module"
+  ],
+  "author": {
+    "name": "Tiago Salomon"
+  },
+  "peerDependencies": {
+    "@angular/common": "^9.1.9",
+    "@angular/core": "^9.1.9"
+  },
+  "dependencies": {
+    "tslib": "^1.10.0"
+  }
+}

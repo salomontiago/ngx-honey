@@ -1,0 +1,23 @@
+<div data-component="auth">
+  <mat-card>
+    <mat-card-content>
+      <img src="../../assets/img/logo.svg" width="50%" class="logo">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+          <mat-label>E-mail</mat-label>
+          <input autocomplete="email" matInput placeholder="E-mail" type="email" formControlName="email">
+          <mat-error *ngIf="form.controls.email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input autocomplete="current-password" matInput placeholder="Password" type="password" formControlName="pass">
+          <mat-error *ngIf="form.controls.pass.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" [disabled]="!form.valid || form.pristine"><i class="fas fa-door-open"></i><i class="fas fa-door-closed"></i></button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
